@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2d1236" />
+    <title>For Kratika ✦</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <div class="universe" id="universe" aria-hidden="true"></div>
+
+    <div class="site-tools" aria-label="Website controls">
+      <div class="brand-mark" aria-label="C plus K">C<span>+</span>K</div>
+      <button class="music-control" id="musicButton" type="button" aria-pressed="false" aria-label="Play background music">
+        <span class="music-note">♪</span><span id="musicLabel">Play music</span>
+      </button>
+    </div>
+
+    <!-- Opening screen -->
+    <section class="cover" id="cover" aria-label="Open your birthday surprise">
+      <span class="spark spark-one">✦</span>
+      <span class="spark spark-two">✦</span>
+      <span class="spark spark-three">♡</span>
+      <div class="cover-copy">
+        <p class="eyebrow">A little birthday delivery</p>
+        <h1>For <em data-name>Kratika</em></h1>
+        <p class="cover-subtitle">From your first college friend, with a very full heart.</p>
+      </div>
+      <button class="gift-button" id="openGift" type="button" aria-label="Open Kratika's birthday gift">
+        <span class="gift-lid"></span>
+        <span class="gift-bow bow-left"></span>
+        <span class="gift-bow bow-right"></span>
+        <span class="gift-box"><i></i></span>
+        <span class="gift-tag">open me</span>
+      </button>
+      <p class="tap-hint">tap the gift, chudail ✦</p>
+    </section>
+
+    <main id="experience" aria-hidden="true">
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">13 November • written just for you</p>
+          <h2>Happy Birthday,<br /><em data-name>Kratika</em>!</h2>
+          <p class="hero-message" data-intro></p>
+          <div class="signature-line">
+            <span></span>
+            <p>with too many feelings, <b data-sender></b></p>
+            <span></span>
+          </div>
+        </div>
+
+        <aside class="countdown-card reveal" aria-label="Countdown to Kratika's next birthday">
+          <p class="countdown-label">Next birthday is in</p>
+          <div class="countdown" id="birthdayCountdown">
+            <div><strong id="days">00</strong><span>days</span></div>
+            <div><strong id="hours">00</strong><span>hours</span></div>
+            <div><strong id="minutes">00</strong><span>mins</span></div>
+            <div><strong id="seconds">00</strong><span>secs</span></div>
+          </div>
+          <p class="turning-line">Ready to turn <b id="turningAge">21</b> ✦</p>
+        </aside>
+      </section>
+
+      <section class="forever-section section-shell">
+        <article class="forever-card reveal" id="foreverCard">
+          <p class="eyebrow">one important question...</p>
+          <h2>Will you be my<br /><em>forever friend?</em></h2>
+          <p class="forever-subtitle">No pressure, Kratika… but I did make the YES button extra convincing. ♡</p>
+          <div class="answer-stage" id="answerStage">
+            <button class="answer-button no-button" id="noAnswer" type="button">NO?</button>
+            <button class="answer-button yes-button" id="yesAnswer" type="button">YES — always ♥</button>
+          </div>
+          <p class="answer-status" id="answerStatus" aria-live="polite">Tip: the “NO” button gets a little shy.</p>
+        </article>
+      </section>
+
+      <section class="life-section section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">13 November 2005 → forever</p>
+          <h2>A whole <em>lifetime</em><br />of you.</h2>
+          <p>The world got a little more dramatic, warm, funny and unforgettable the day you arrived.</p>
+        </div>
+        <div class="lifetime-card reveal" aria-live="polite">
+          <span class="orbit orbit-a"></span><span class="orbit orbit-b"></span>
+          <p class="life-label">Kratika has been making the world better for</p>
+          <div class="life-grid">
+            <div><strong id="lifeYears">00</strong><span>years</span></div>
+            <div><strong id="lifeDays">000</strong><span>days</span></div>
+            <div><strong id="lifeHours">00</strong><span>hours</span></div>
+            <div><strong id="lifeMinutes">00</strong><span>minutes</span></div>
+            <div><strong id="lifeSeconds">00</strong><span>seconds</span></div>
+          </div>
+          <p class="life-footnote">…and every second has been a reason to celebrate. ♡</p>
+        </div>
+      </section>
+
+      <section class="memory-section section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">little frames, big feelings</p>
+          <h2>Our <em>college-era</em><br />kind of magic.</h2>
+          <p>Sixteen little frames from all the chaos, comfort and laughter we've collected together.</p>
+        </div>
+        <div class="memory-grid" id="memoryGrid" aria-label="Photo memories">
+          <figure class="memory-card empty"><img src="images/photo-02.jpg" alt="Our first college memory" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 01</span><small>Photo not found</small></span><figcaption class="memory-caption">Our first college memory</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-01.jpg" alt="That laugh I still remember" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 02</span><small>Photo not found</small></span><figcaption class="memory-caption">That laugh I still remember</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-03.jpg" alt="One of our random days" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 03</span><small>Photo not found</small></span><figcaption class="memory-caption">One of our random days</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-04.jpg" alt="A forever favourite" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 04</span><small>Photo not found</small></span><figcaption class="memory-caption">A forever favourite</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-05.jpeg" alt="Us being us" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 05</span><small>Photo not found</small></span><figcaption class="memory-caption">Us being us</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-06.jpg" alt="A core memory unlocked" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 06</span><small>Photo not found</small></span><figcaption class="memory-caption">A core memory unlocked</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-07.jpg" alt="The softest day" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 07</span><small>Photo not found</small></span><figcaption class="memory-caption">The softest day</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-08.jpg" alt="College chaos" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 08</span><small>Photo not found</small></span><figcaption class="memory-caption">College chaos</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-09.jpg" alt="A photo worth keeping" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 09</span><small>Photo not found</small></span><figcaption class="memory-caption">A photo worth keeping</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-10.jpg" alt="Our happy place" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 10</span><small>Photo not found</small></span><figcaption class="memory-caption">Our happy place</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-11.jpg" alt="You make it brighter" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 11</span><small>Photo not found</small></span><figcaption class="memory-caption">You make it brighter</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-12.jpg" alt="One more story" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 12</span><small>Photo not found</small></span><figcaption class="memory-caption">One more story</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-13.jpg" alt="The best kind of silly" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 13</span><small>Photo not found</small></span><figcaption class="memory-caption">The best kind of silly</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-14.jpg" alt="A moment for the books" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 14</span><small>Photo not found</small></span><figcaption class="memory-caption">A moment for the books</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-15.jpg" alt="My favourite chudail" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 15</span><small>Photo not found</small></span><figcaption class="memory-caption">My favourite chudail</figcaption></figure>
+          <figure class="memory-card empty"><img src="images/photo-16.jpg" alt="Still smiling about this" loading="lazy"><span class="photo-placeholder"><b>＋</b><span>PHOTO 16</span><small>Photo not found</small></span><figcaption class="memory-caption">Still smiling about this</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cake-section section-shell">
+        <div class="cake-copy reveal">
+          <p class="eyebrow">first, make a wish</p>
+          <h2>Light it, wish on it,<br /><em>blow it out.</em></h2>
+          <p>Close your eyes for one tiny moment. Your wish stays between you and the stars.</p>
+          <button class="primary-button" id="blowCandle" type="button">Blow out the candle <span>✦</span></button>
+          <p class="cake-status" id="cakeStatus" aria-live="polite">The candle is waiting for your wish.</p>
+        </div>
+        <div class="cake-scene reveal" aria-hidden="true">
+          <span class="star star-a">✦</span><span class="star star-b">✦</span><span class="star star-c">✦</span>
+          <div class="cake-glow"></div>
+          <div class="candle"><span class="flame" id="flame"></span></div>
+          <div class="frosting"></div>
+          <div class="cake-top"><i></i><i></i><i></i><i></i></div>
+          <div class="cake-middle"></div>
+          <div class="cake-bottom"></div>
+          <div class="cake-plate"></div>
+          <p>Happy Birthday, <span data-name>Kratika</span>!</p>
+        </div>
+      </section>
+
+      <section class="balloon-section section-shell">
+        <div class="section-heading centre reveal">
+          <p class="eyebrow">tap a balloon</p>
+          <h2>Five reasons you're<br /><em>impossible not to love.</em></h2>
+          <p id="balloonCounter">0 / 5 popped</p>
+        </div>
+        <div class="reason-card reveal" id="reasonCard" aria-live="polite">
+          <p class="reason-label">your reason will appear here</p>
+          <p class="reason-text">Go on, pop the first balloon.</p>
+        </div>
+        <div class="balloon-garden" id="balloonGarden" aria-label="Five interactive balloons"></div>
+      </section>
+
+      <section class="wishes-section section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">special delivery</p>
+          <h2>Six wishes<br /><em>for your year.</em></h2>
+          <p>Tap each postcard to mark it as delivered. Small wishes, sent with giant love.</p>
+        </div>
+        <div class="wish-list reveal" id="wishList" aria-label="Six birthday wishes"></div>
+      </section>
+
+      <section class="letter-section section-shell">
+        <div class="envelope-wrap reveal">
+          <button class="envelope" id="openLetter" type="button" aria-expanded="false" aria-controls="letter">
+            <span class="envelope-flap"></span><span class="envelope-heart">♥</span>
+            <span class="envelope-label">one last thing</span>
+          </button>
+          <p>Open when you're ready.</p>
+        </div>
+        <article class="letter" id="letter" aria-hidden="true">
+          <p class="eyebrow">a note kept only for you</p>
+          <h2>Dear <em data-name>Kratika</em>,</h2>
+          <div data-letter></div>
+          <p class="letter-signoff">Always on your team,<br /><b data-sender></b> ♡</p>
+        </article>
+      </section>
+
+      <footer>
+        <p>Made with big feelings for <span data-name>Kratika</span> • 13 November</p>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
